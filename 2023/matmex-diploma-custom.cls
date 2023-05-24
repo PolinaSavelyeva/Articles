@@ -271,9 +271,11 @@ fontadjust=true,
     % В верхнем колонтитуле будет университет, кафедра и группа, если это курсовая/практика, или просто университет для ВКР
     \chead{\large
       Санкт-Петербургский государственный университет
-      \vskip 1em      
+      \vskip 1em
+      \ifthenelse{\equal{\my@title@type@ru}{bachelor} \OR \equal{\my@title@type@ru}{master}}
       {}
       {
+        {\large \my@title@chair@ru }
         \vskip 1em
         {\large Группа \my@title@group@ru }
       }
@@ -292,11 +294,49 @@ fontadjust=true,
 
     \ifthenelse{\equal{\my@title@type@ru}{coursework} \OR \equal{\my@title@type@ru}{practice} \OR \equal{\my@title@type@ru}{prediploma} \OR \equal{\my@title@type@ru}{prediploma}}
     {
-        {\Large\textbf{\textit{\my@title@author@ru}}}
-        \vskip 2em
         {\Huge \@title}
+        \vskip 2em
+        {\Large\textbf{\textit{\my@title@author@ru}}}
         \vskip 1em
-        
+        {\large
+            \ifthenelse{\equal{\my@title@type@ru}{production}}
+                {Отчёт по производственной практике}
+                {\ifthenelse{\equal{\my@title@type@ru}{coursework}}
+                    {Отчёт по курсовой работе}
+                    {\ifthenelse{\equal{\my@title@type@ru}{practice}}
+                        {Отчёт по учебной практике}
+                        {Отчёт по преддипломной практике}
+                    }
+                }\\
+            \ifthenelse{\equal{\my@title@kind@ru}{solution}}
+                {в форме <<Решение>>}
+                {\ifthenelse{\equal{\my@title@kind@ru}{experiment}}
+                    {в форме <<Эксперимент>>}
+                    {\ifthenelse{\equal{\my@title@kind@ru}{production}}
+                        {в форме <<Производственное задание>>}
+                        {\ifthenelse{\equal{\my@title@kind@ru}{comparison}}
+                            {в форме <<Сравнение>>}
+                            {в форме <<Теоретическое исследование>>}
+                        }
+                    }
+                }
+        }\\
+        {\normalsize \raggedleft
+            \vskip 5em
+            Научный руководитель:\\
+            \my@title@supervisorPosition@ru\ \my@title@supervisor@ru\\
+            \ifthenelse{\equal{\my@title@consultant@ru}{}}
+            {}
+            {
+                 \ifthenelse{\equal{\my@title@consultant@ru}{\my@title@supervisor@ru}}
+                 {\PackageError{matmex-diploma-custom}{Косультант и научник не могут быть одним и тем же физическим лицом. Скорее всего у Вас нет консультанта, и его указывать не нужно}{}}
+                 {
+                   \vskip 1em
+                   Консультант:\\
+                   \my@title@consultantPosition@ru\ \my@title@consultant@ru\\
+                 }
+            }
+        }
     }
     {
         {\Large\textbf{\textit{\my@title@author@ru}}}
