@@ -1,0 +1,141 @@
+% !TeX spellcheck = ru_RU
+
+@incollection{LinearAlgebra-basedGraphFramework,
+author = {Yang, Carl and Bulu\c{c}, Ayd\i{}n and Owens, John D.},
+title = {GraphBLAST: A High-Performance Linear Algebra-Based Graph Framework on the GPU},
+year = {2022},
+issue_date = {March 2022},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {48},
+number = {1},
+issn = {0098-3500},
+url = {https://doi.org/10.1145/3466795},
+doi = {10.1145/3466795},
+abstract = {High-performance implementations of graph algorithms are challenging to implement on new parallel hardware such as GPUs because of three challenges: (1)&nbsp;the difficulty of coming up with graph building blocks, (2)&nbsp;load imbalance on parallel hardware, and (3)&nbsp;graph problems having low arithmetic intensity. To address some of these challenges, GraphBLAS is an innovative, on-going effort by the graph analytics community to propose building blocks based on sparse linear algebra, which allow graph algorithms to be expressed in a performant, succinct, composable, and portable manner. In this paper, we examine the performance challenges of a linear-algebra-based approach to building graph frameworks and describe new design principles for overcoming these bottlenecks. Among the new design principles is exploiting input sparsity, which allows users to write graph algorithms without specifying push and pull direction. Exploiting output sparsity allows users to tell the backend which values of the output in a single vectorized computation they do not want computed. Load-balancing is an important feature for balancing work amongst parallel workers. We describe the important load-balancing features for handling graphs with different characteristics. The design principles described in this paper have been implemented in “GraphBLAST”, the first high-performance linear algebra-based graph framework on NVIDIA GPUs that is open-source. The results show that on a single GPU, GraphBLAST has on average at least an order of magnitude speedup over previous GraphBLAS implementations SuiteSparse and GBTL, comparable performance to the fastest GPU hardwired primitives and shared-memory graph frameworks Ligra and Gunrock, and better performance than any other GPU graph framework, while offering a simpler and more concise programming model.},
+journal = {ACM Trans. Math. Softw.},
+month = {feb},
+articleno = {1},
+numpages = {51},
+keywords = {sparse linear algebra, matrix multiply, GPU, Graph algorithm}
+}
+
+@article{stanimirovic2009performance,
+  title={Performance comparison of storage formats for sparse matrices},
+  author={Stanimirovic, Ivan P and Tasic, Milan B},
+  journal={Ser. Mathematics and Informatics},
+  volume={24},
+  number={1},
+  pages={39--51},
+  year={2009}
+}
+
+@inproceedings{bulucc2009parallel,
+  title={Parallel sparse matrix-vector and matrix-transpose-vector multiplication using compressed sparse blocks},
+  author={Bulu{\c{c}}, Aydin and Fineman, Jeremy T and Frigo, Matteo and Gilbert, John R and Leiserson, Charles E},
+  booktitle={Proceedings of the twenty-first annual symposium on Parallelism in algorithms and architectures},
+  pages={233--244},
+  year={2009}
+}
+
+@incollection{sarcar2022threading,
+  title={Threading},
+  author={Sarcar, Vaskaran},
+  booktitle={Test Your Skills in C\# Programming: Review and Analyze Important Features of C\#},
+  pages={385--429},
+  year={2022},
+  publisher={Springer}
+}
+
+@Inbook{Lee2020,
+author="Lee, Joshua",
+editor="Schintler, Laurie A.
+and McNeely, Connie L.",
+title="Multi-threading",
+bookTitle="Encyclopedia of Big Data",
+year="2020",
+publisher="Springer International Publishing",
+address="Cham",
+pages="1--4",
+isbn="978-3-319-32001-4",
+doi="10.1007/978-3-319-32001-4_404-1",
+url="https://doi.org/10.1007/978-3-319-32001-4_404-1"
+}
+
+@article{john2010continuous,
+  title={Continuous cotemporal probabilistic modeling of systems biology networks from sparse data},
+  author={John, David J and Fetrow, Jacquelyn S and Norris, James L},
+  journal={IEEE/ACM Transactions on Computational Biology and Bioinformatics},
+  volume={8},
+  number={5},
+  pages={1208--1222},
+  year={2010},
+  publisher={IEEE}
+}
+
+@article{doak2005understanding,
+  title={Understanding and predicting the effects of sparse data on demographic analyses},
+  author={Doak, Daniel F and Gross, Kevin and Morris, William F},
+  journal={Ecology},
+  volume={86},
+  number={5},
+  pages={1154--1163},
+  year={2005},
+  publisher={Wiley Online Library}
+}
+
+@article{rao2021embedding,
+  title={Embedding physics to learn spatiotemporal dynamics from sparse data},
+  author={Rao, Chengping and Sun, Hao and Liu, Yang},
+  journal={arXiv preprint arXiv:2106.04781},
+  year={2021}
+}
+
+@inproceedings{spampinato2019linear,
+  title={Linear algebraic depth-first search},
+  author={Spampinato, Daniele G and Sridhar, Upasana and Low, Tze Meng},
+  booktitle={Proceedings of the 6th ACM SIGPLAN International Workshop on Libraries, Languages and Compilers for Array Programming},
+  pages={93--104},
+  year={2019}
+}
+
+@misc{parhami2019parallel,
+  title={Parallel Processing with Big Data.},
+  author={Parhami, Behrooz},
+  year={2019}
+}
+
+@article{10.1145/2049662.2049663,
+author = {Davis, Timothy A. and Hu, Yifan},
+title = {The University of Florida Sparse Matrix Collection},
+year = {2011},
+issue_date = {November 2011},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {38},
+number = {1},
+issn = {0098-3500},
+url = {https://doi.org/10.1145/2049662.2049663},
+doi = {10.1145/2049662.2049663},
+abstract = {We describe the University of Florida Sparse Matrix Collection, a large and actively growing set of sparse matrices that arise in real applications. The Collection is widely used by the numerical linear algebra community for the development and performance evaluation of sparse matrix algorithms. It allows for robust and repeatable experiments: robust because performance results with artificially generated matrices can be misleading, and repeatable because matrices are curated and made publicly available in many formats. Its matrices cover a wide spectrum of domains, include those arising from problems with underlying 2D or 3D geometry (as structural engineering, computational fluid dynamics, model reduction, electromagnetics, semiconductor devices, thermodynamics, materials, acoustics, computer graphics/vision, robotics/kinematics, and other discretizations) and those that typically do not have such geometry (optimization, circuit simulation, economic and financial modeling, theoretical and quantum chemistry, chemical process simulation, mathematics and statistics, power networks, and other networks and graphs). We provide software for accessing and managing the Collection, from MATLAB™, Mathematica™, Fortran, and C, as well as an online search capability. Graph visualization of the matrices is provided, and a new multilevel coarsening scheme is proposed to facilitate this task.},
+journal = {ACM Trans. Math. Softw.},
+month = {dec},
+articleno = {1},
+numpages = {25},
+keywords = {Graph drawing, performance evaluation, sparse matrices, multilevel algorithms}
+}
+
+@Article{Hunter:2007,
+  Author    = {Hunter, J. D.},
+  Title     = {Matplotlib: A 2D graphics environment},
+  Journal   = {Computing in Science \& Engineering},
+  Volume    = {9},
+  Number    = {3},
+  Pages     = {90--95},
+  abstract  = {Matplotlib is a 2D graphics package used for Python for
+  application development, interactive scripting, and publication-quality
+  image generation across user interfaces and operating systems.},
+  publisher = {IEEE COMPUTER SOC},
+  doi       = {10.1109/MCSE.2007.55},
+  year      = 2007
+}
