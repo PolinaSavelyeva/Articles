@@ -6,7 +6,7 @@ This repository is dedicated to storing and organizing various reports, research
 
 If you are using online TeX editors, be sure for completing steps below.
 - Upload the template files to your project, preserving the folder structure.
-- Choose XeTeX (or LuaTeX) as the compiler (e.g., in [Overleaf](https://www.overleaf.com/), go to Menu -> Compiler).
+- Choose XeTeX (or LuaTeX) as the compiler (e.g., in [Overleaf](https://www.overleaf.com/), go to Menu &rarr; Compiler).
 
 If you are using a TeX locally, the standard way to build is by using the following command:
 ```
