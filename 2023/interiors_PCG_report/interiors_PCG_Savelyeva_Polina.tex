@@ -1,0 +1,40 @@
+% !TEX TS-program = xelatex
+% !BIB program = bibtex
+% !TeX spellcheck = ru_RU
+
+% About magic macroses see also
+% https://tex.stackexchange.com/questions/78101/
+
+% По умолчанию используется шрифт 14 размера. Если нужен 12-й шрифт, уберите опцию [14pt]
+\documentclass[14pt, russian]{matmex-diploma-custom}
+
+\input{preamble.tex}
+
+\usepackage{totcount}
+
+\begin{document}
+% TODO: Formatting
+\input{title.tex}
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+% \begin{abstract}
+%   В курсаче не нужен
+% \end{abstract}
+
+\input{000_intro}
+\input{010_task}
+\input{020_related}
+\input{030_background}
+\input{040_method}
+\input{050_experiment}
+\input{060_use}
+\input{070_threatsOfCorrectnessViolation}
+\input{080_implementation.tex}
+\input{090_conclusion}
+
+\setmonofont{CMU Typewriter Text}
+\bibliographystyle{ugost2008ls}
+\bibliography{vkr}
+\end{document}
