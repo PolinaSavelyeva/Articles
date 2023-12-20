@@ -8,7 +8,28 @@
 
 \subsection{Существующие решения}
 
-Исследователи в работе \enquote{Recent Advances in Procedural Generation of Buildings: From Diversity to Integration} проанализировали существующие подходы к процедурной генерации интерьеров зданий. Около 65\% решений используют методы, \textit{основанные на правилах} (rule-based approach), около 20\% --- машинное обучение и менее 10\% --- \textit{агентный подход} (agents approach). Наименьшее распространение получил способ \enquote{замены} (substitution approach), включающий в себя L-системы и грамматики форм. Системы, унифицирующие машинное обучение, вопреки своей растущей популярности \cite{kutzias2023recent}, имеют существенный порог вхождения и требуют значительных временных трат \cite{kan2021automatic,balint2019generalized}. Таким образом, для решения поставленной задачи предпочтительнее использовать агентный или основанный на правилах подход.
+Исследователи в работе \enquote{Recent Advances in Procedural Generation of Buildings: From Diversity to Integration} проанализировали существующие подходы к процедурной генерации интерьеров зданий. Около 67\% решений используют методы, \textit{основанные на правилах} (rule-based approach), около 23\% --- машинное обучение (machine learning) и около 6\% --- \textit{агентный подход} (agents approach). Наименьшее распространение получил способ \enquote{замены} (substitution approach), включающий в себя L-системы и грамматики форм. Системы, унифицирующие машинное обучение, вопреки своей растущей популярности \cite{kutzias2023recent}, имеют существенный порог вхождения и требуют значительных временных трат \cite{kan2021automatic,balint2019generalized}. Таким образом, для решения поставленной задачи предпочтительнее использовать агентный или основанный на правилах подход (табл.\ref{tbl:comparison}).
+
+\begin{table}[b]
+\begin{center}
+    \caption{Сравнение методов процедурной генерации интерьеров}
+    \label{tbl:comparison}
+    \rowcolors{2}{black!2}{black!10}
+    \scalebox{0.7}{
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Критерий & Rule-based & Machine learning & Agents & Substitution \\
+    \hline
+    \hline
+    Сложные иерархические  паттерны  & \ding{51} & \ding{51} & \ding{55} & \ding{51} \\
+    Расстановка в реальном времени  & \ding{51} & \ding{51} & \ding{51} & \ding{51} \\
+    Простота реализации & \ding{51} & \ding{55} & \ding{51} & \ding{55} \\
+    Место по кол-ву научных публикаций & 1 & 2 & 3 & 4 \\
+    \hline
+    \end{tabular}
+    }
+\end{center}
+\end{table}
 
 \subsubsection{Агентный подход}
 
