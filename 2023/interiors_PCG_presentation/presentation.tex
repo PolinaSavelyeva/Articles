@@ -1,0 +1,201 @@
+\documentclass{beamer}
+%Для защит онлайн лучше использовать разрешение 16x9
+%\documentclass[aspectratio=169]{beamer}
+
+\input{preamble.tex}
+
+% То, что в квадратных скобках, отображается внизу по центру каждого слайда. 
+\title[Процедурная генерация интерьера]{Реализация процедурной генерации интерьера комнат в 3D-игре на Unity}
+
+% То, что в квадратных скобках, отображается в левом нижнем углу. 
+\institute[СПбГУ]{}
+
+% То, что в квадратных скобках, отображается в левом нижнем углу.
+\author[Савельева Полина]{Савельева Полина Андреевна, группа 22.Б07-мм}
+ 
+\begin{document}
+{
+\setbeamertemplate{footline}{}
+% Лого университета или организации, отображается в шапке титульного листа
+\begin{frame}
+  \includegraphics[width=1.4cm]{pictures/SPbGU_Logo.png}
+\vspace{-35pt}
+\hspace{-10pt}
+\begin{center}
+   \begin{tabular}{c}
+        \scriptsize{Санкт-Петербургский государственный университет} \\
+        \scriptsize{Кафедра системного программирования}
+    \end{tabular}
+\titlepage
+\end{center}
+
+\btVFill
+
+{\scriptsize
+  % У научного руководителя должна быть указана научная степень
+   \textbf{Научный руководитель:} к.т.н. Ю.~В.~Литвинов, старший преподаватель кафедры системного программирования \\
+  % Консультанта может и не быть. Должна быть указана должность или ученая степень
+   \textbf{Консультант:}  Р.~А.~Береснёв, cтудент 3-го курса СПбГУ \\
+ }
+\begin{center}
+  \vspace{5pt}
+  \scriptsize{Санкт-Петербург\\
+                 2023}
+  \end{center}
+
+\end{frame}
+}
+
+% Обязательный слайд: четкая формулировка цели данной работы и постановка задачи
+% Описание выносимых на защиту результатов, процесса или особенностей их достижения и т.д.
+\begin{frame}
+  \frametitle{Постановка задачи}
+  \textbf{Цель}: реализация процедурной генерации интерьера комнат в игре Time Reactor на Unity %озвученной выше  
+
+  \textbf{Задачи}:
+  \begin{itemize}
+    \item Изучение существующих решений
+    \item Реализация .NET библиотеки для процедурной генерации инте-
+рьера игровых комнат
+    \item Реализация процедурной генерации интерьера комнат в игре Time
+Reactor на Unity с использованием разработанной библиотеки
+    \item Проведение апробации среди заинтересованных игроков
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]  
+  \frametitle{Введение}
+  \begin{itemize}
+    \item Ручное заполнение комнат в игре Time Reactor является трудоемким процессом
+    \item Процедурная генерация, PCG
+    \begin{itemize}
+        \item Создание разнообразного наполнения в больших масштабах
+        \item Нет необходимости хранить данные
+        \item Экономия времени
+        \item Повторное использование генераторов
+    \end{itemize}
+    \item Процедурно генерируемое помещение
+    \begin{itemize}
+        \item Паттерны
+        \item Временные ограничения
+        \item Неизменность при повторном посещении
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+            
+\begin{frame}  
+  \frametitle{Существующие решения}
+  \begin{center}
+        \begin{figure}
+            \centering
+            \includegraphics[width=1.0\textwidth]{pictures/comparison_table.png}
+            \caption{Сравнение существующих решений\footnote{Данные о количественном отношении взяты из обзорной статьи \enquote{Recent Advances in Procedural Generation of Buildings: From Diversity to Integration}}}
+        \end{figure}
+  \end{center}
+\end{frame}
+            
+%Идеально, если есть по одному слайду на каждую поставленную задачу            
+\begin{frame}
+  \frametitle{Основанный на правилах подход}
+    \begin{figure}
+      \centering
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{pictures/collider.pdf}
+        \caption{Ограничительная рамка у объектов}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{pictures/child_parent_relationship.pdf}
+        \caption{Иерархическое представление комнаты}
+      \end{minipage}
+  \end{figure}
+  За основу решения взят основанный на правилах подход
+  \begin{itemize}
+    \item Ограничительная рамка и древовидное представление
+    \item Входные табличные данные
+    \item Рекурсивный алгоритм с возможностью выхода
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Особенности реализации}
+  \begin{minipage}[m]{0.5\linewidth}
+    \begin{figure}
+      \centering
+        \includegraphics[width=\textwidth]{pictures/pcg.pdf}
+        \caption{Последовательность шагов в алгоритме генерации интерьера}
+    \end{figure}
+    \end{minipage}\hfill
+    \begin{minipage}[m]{0.5\linewidth}
+      \begin{itemize}
+        \item Использование F\# библиотеки в сторонних .NET проектах
+        \item Генератор псевдослучайных чисел
+        \item Отдельные входные данные
+        \item Алгоритм генерации без возможности выхода
+      \end{itemize}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Архитектура решения}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pictures/uml.pdf}
+    \caption{UML диаграмма классов реализованной библиотеки}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Интеграция в игру}
+  \begin{minipage}[m]{0.6\linewidth}
+    \begin{figure}
+      \centering
+        \includegraphics[width=\textwidth]{pictures/computing_center.png}
+        \caption{Процедурно заполненный компьютерный центр}
+    \end{figure}
+    \end{minipage}\hfill
+    \begin{minipage}[m]{0.4\linewidth}
+      \begin{itemize}
+        \item Логика в Unity Inspector
+        \item Локальная координатная система
+        \item Правила положения размещаемых объектов
+      \end{itemize}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Апробация}
+  Постановка эксперимента
+  \begin{itemize}
+    \item Методика оценки качества продукта System Usability Scale
+    \item В опросе приняли участие 13 человек  
+    \item Средний балл по системе SUS составляет 68,1 при среднем показателе в 68 для систем, использующих данную систему оценивания
+    \item Генератор быстро справляется с расстановкой и не создает больших задержек во времени
+    \item Более половины участников выразили сомнение об отсутствии комнат, заполненных вручную
+  \end{itemize}  
+\end{frame}
+
+\begin{frame}[t]
+    \frametitle{Результаты апробации}
+    \begin{figure}
+      \centering
+        \includegraphics[width=0.8\textwidth]{pictures/questions.png}
+        \includegraphics[width=0.8\textwidth]{pictures/experiment.png}
+        \caption{Апробационные вопросы и процент участников, выбравших предложенные варианты}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Заключение}
+    \begin{itemize}
+        \item Рассмотрены существующие решения в области процедурной генерации интерьера комнат
+        \item Реализована .NET библиотека для генерации интерьера комнат, доступная для скачивания на платформе NuGet\footnote{NuGet: \url{https://www.nuget.org/packages/RoomInteriorGenerator}} и GitHub\footnote{GitHub: \url{https://github.com/PolinaSavelyeva/RoomInteriorGenerator}}
+        \item Библиотека интегрирована в игру Ti\-me Re\-ac\-tor\footnote{Time Reactor: \url{https://github.com/RuslanBeresnev/Time-Reactor-Game}} на Uni\-ty En\-gi\-ne при помощи Uni\-ty Ins\-pec\-tor и C\# скриптов
+        \item Проведена апробация среди заинтересованных игроков, которая подтвердила реалистичность генерируемых интерьеров и общую эффективность системы 
+    \end{itemize}
+\end{frame}
+
+\end{document}
