@@ -46,23 +46,6 @@
 \end{frame}
 }
 
-% Обязательный слайд: четкая формулировка цели данной работы и постановка задачи
-% Описание выносимых на защиту результатов, процесса или особенностей их достижения и т.д.
-\begin{frame}
-  \frametitle{Постановка задачи}
-  \textbf{Цель}: реализация процедурной генерации интерьера комнат в игре Time Reactor на Unity %озвученной выше  
-
-  \textbf{Задачи}:
-  \begin{itemize}
-    \item Изучение существующих решений
-    \item Реализация .NET библиотеки для процедурной генерации инте-
-рьера игровых комнат
-    \item Реализация процедурной генерации интерьера комнат в игре Time
-Reactor на Unity с использованием разработанной библиотеки
-    \item Проведение апробации среди заинтересованных игроков
-  \end{itemize}
-\end{frame}
-
 \begin{frame}[fragile]  
   \frametitle{Введение}
   \begin{itemize}
@@ -82,9 +65,27 @@ Reactor на Unity с использованием разработанной б
     \end{itemize}
   \end{itemize}
 \end{frame}
+
+% Обязательный слайд: четкая формулировка цели данной работы и постановка задачи
+% Описание выносимых на защиту результатов, процесса или особенностей их достижения и т.д.
+\begin{frame}
+  \frametitle{Постановка задачи}
+  \textbf{Цель}: реализация процедурной генерации интерьера комнат в игре Time Reactor на Unity %озвученной выше  
+
+  \textbf{Задачи}:
+  \begin{itemize}
+    \item Изучение существующих решений
+    \item Реализация .NET библиотеки для процедурной генерации инте-
+рьера игровых комнат
+    \item Реализация процедурной генерации интерьера комнат в игре Time
+Reactor на Unity с использованием разработанной библиотеки
+    \item Проведение апробации среди заинтересованных игроков
+  \end{itemize}
+\end{frame}
             
 \begin{frame}  
   \frametitle{Существующие решения}
+  \vspace*{\fill}
   \begin{center}
         \begin{figure}
             \centering
@@ -92,6 +93,7 @@ Reactor на Unity с использованием разработанной б
             \caption{Сравнение существующих решений\footnote{Данные о количественном отношении взяты из обзорной статьи \enquote{Recent Advances in Procedural Generation of Buildings: From Diversity to Integration}}}
         \end{figure}
   \end{center}
+  \vspace*{\fill}
 \end{frame}
             
 %Идеально, если есть по одному слайду на каждую поставленную задачу            
@@ -165,28 +167,42 @@ Reactor на Unity с использованием разработанной б
     \end{minipage}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Стороннее использование}
+    \begin{figure}
+      \centering
+        \includegraphics[width=\textwidth]{pictures/myplot.png}
+        \caption{Процедурно заполненная двумерная комната}
+  \end{figure}
+\end{frame}
+
 \begin{frame}[t]
   \frametitle{Апробация}
-  Постановка эксперимента
-  \begin{itemize}
-    \item Методика оценки качества продукта System Usability Scale
-    \item В опросе приняли участие 13 человек  
-    \item Средний балл по системе SUS составляет 68,1 при среднем показателе в 68 для систем, использующих данную систему оценивания
-    \item Генератор быстро справляется с расстановкой и не создает больших задержек во времени
-    \item Более половины участников выразили сомнение об отсутствии комнат, заполненных вручную
-  \end{itemize}  
+  %%\vspace*{\fill}
+    \begin{itemize}
+        \item Методика оценки качества продукта System Usability Scale
+        \item В опросе приняли участие 13 человек  
+        \item Средний балл по системе SUS составляет 68,1 при среднем показателе в 68 для систем, использующих данную систему оценивания
+      \end{itemize} 
+      \begin{figure}
+      \centering
+        \includegraphics[width=\textwidth]{pictures/questions.png}
+        \caption{Апробационные вопросы}
+    \end{figure}
+    %%\vspace*{\fill}
+   
 \end{frame}
 
 \begin{frame}[t]
     \frametitle{Результаты апробации}
+    \vspace*{\fill}
     \begin{figure}
       \centering
-        \includegraphics[width=0.8\textwidth]{pictures/questions.png}
-        \includegraphics[width=0.8\textwidth]{pictures/experiment.png}
-        \caption{Апробационные вопросы и процент участников, выбравших предложенные варианты}
+        \includegraphics[width=\textwidth]{pictures/experiment.png}
+        \caption{Процент участников, выбравших предложенные варианты}
     \end{figure}
+    \vspace*{\fill}
 \end{frame}
-
 
 \begin{frame}
   \frametitle{Заключение}
