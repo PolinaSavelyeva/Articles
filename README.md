@@ -1,4 +1,4 @@
-# SPBU's Reports and Related Works Repository
+# Articles
 
 This repository is dedicated to storing and organizing various reports, research papers, and related works. 
 
