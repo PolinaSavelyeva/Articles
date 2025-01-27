@@ -17,5 +17,5 @@ By default, this command will compile the template using XeTeX. If you want to u
 make ENGINE=lualatex
 ```
 
-## Template 
-To find more options take a look at the original MatMech [template](https://github.com/spbu-se/matmex-diploma-template).
+## Templates
+- To find more options take a look at the original MatMech [template](https://github.com/spbu-se/matmex-diploma-template).
